@@ -70,9 +70,10 @@ as.numeric(pull(hw1_df, character_vec))
 as.numeric(pull(hw1_df, factor_vec))
 ```
 
+`as.numeric` function converted logical and factor vectors to numerical values. 
+    Logical vectors became 0 and 1, where 1 represents true and 0 represents false.  
+    Factor vectors became 1, 2, or 3 representing different levels.
 
+`as.numeric` function did not work for the character vector. When the code was run, the warning message "NAs introduced by coercion" was given because R can not convert non-numeric strings to numbers. 
 
-
-
-
-
+This explains the result of taking the mean with different variable types
