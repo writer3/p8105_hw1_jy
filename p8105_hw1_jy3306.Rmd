@@ -25,4 +25,8 @@ The dataset "penguins" consists of measurements and descriptions for three speci
   * `sex` is a categorical variable describing the sex of the penguin, including male and female.
   * `year`is an integer describing the year of data recording.
 
+This dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+
+The mean flipper length is `r mean(pull(penguins, flipper_length_mm))`.
+
 
