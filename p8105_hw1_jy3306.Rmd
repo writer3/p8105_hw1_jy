@@ -5,7 +5,7 @@ date: "2024-09-21"
 output: github_document
 ---
 
-```{r, echo = TRUE, message = FALSE}
+```{r, echo = FALSE, message = FALSE}
 library(tidyverse)
 ```
 
@@ -14,6 +14,7 @@ data("penguins", package = "palmerpenguins")
 ```
 
 ## Problem 1
+### Description of Dataset
 The dataset "penguins" consists of measurements and descriptions for three species of penguins. The following are the key variables:
 
   * `species` is a categorical variable describing the species of the penguin, which includes Adelie, Gentoo, and Chinstrap.
@@ -25,8 +26,18 @@ The dataset "penguins" consists of measurements and descriptions for three speci
   * `sex` is a categorical variable describing the sex of the penguin, including male and female.
   * `year`is an integer describing the year of data recording.
 
-This dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+This dataset contains **`r nrow(penguins)`** rows and **`r ncol(penguins)`** columns.
 
-The mean flipper length is `r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)` mm.
+The mean flipper length is **`r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)`** mm.
+
+### Scatterplot of `flipper_length_mm` (y) vs `bill_length_mm` (x)
+```{r yx_scatter}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
+ggsave("scatter_plot.pdf", height = 4, width = 6)
+```
+
+
+
 
 
