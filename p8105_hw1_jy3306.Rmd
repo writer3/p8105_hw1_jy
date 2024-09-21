@@ -31,11 +31,46 @@ This dataset contains **`r nrow(penguins)`** rows and **`r ncol(penguins)`** col
 The mean flipper length is **`r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)`** mm.
 
 ### Scatterplot of `flipper_length_mm` (y) vs `bill_length_mm` (x)
-```{r yx_scatter}
+```{r yx_scatter, warning = FALSE}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 
 ggsave("scatter_plot.pdf", height = 4, width = 6)
 ```
+
+
+## Problem 2
+### Create a dataframe
+```{r}
+## set seed to ensure reproducibility
+set.seed(12)
+
+##define dataframe
+hw1_df = tibble(
+  norm_samp = rnorm(10), 
+  logical_vec = norm_samp > 0,
+  character_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+  factor_vec = factor(rep(c("lev1", "lev2", "lev3"), length.out = 10))
+)
+```
+
+### Take the mean of each variable
+```{r}
+mean(pull(hw1_df, norm_samp))
+mean(pull(hw1_df, logical_vec))
+mean(pull(hw1_df, character_vec))
+mean(pull(hw1_df, factor_vec))
+```
+
+Mean can be taken for numerical or logical vectors, such as norm_sample and logical_vec, but not for the character and factor vectors. 
+
+### Explicitly converting variable from one type to another
+```{r, message = FALSE, eval = FALSE}
+as.numeric(pull(hw1_df, logical_vec))
+as.numeric(pull(hw1_df, character_vec))
+as.numeric(pull(hw1_df, factor_vec))
+```
+
+
 
 
 
