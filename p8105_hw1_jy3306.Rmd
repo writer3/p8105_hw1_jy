@@ -5,7 +5,7 @@ date: "2024-09-21"
 output: github_document
 ---
 
-```{r}
+```{r, echo = TRUE, message = FALSE}
 library(tidyverse)
 ```
 
@@ -16,12 +16,13 @@ data("penguins", package = "palmerpenguins")
 ## Problem 1
 The dataset "penguins" consists of measurements and descriptions for three species of penguins. The following are the key variables:
 
-  - `species` is a categorical variable describing the species of the penguin, which includes Adelie, Gentoo, and Chinstrap.
-  - `island`is a categorical variable describing the island the penguin was identified on, which includes Torgersen, Biscoe, and Dream.
-  - `bill_length_mm` is a continuous variable describing the length of the bill of penguin in millimeters.
-  - `bill_depth_mm` is a continuous variable describing the depth of the bill of penguin in millimeters.
-  - `flipper_length_mm` is an integer describing the length of the flipper of penguin in millimeters.
-  - `body_mass_g`is an integer describing the mass of penguin in grams 
-  - `sex` is a categorical variable describing the sex of the penguin, including male and female.
-  - `year`is an integer describing the year of data recording.
+  * `species` is a categorical variable describing the species of the penguin, which includes Adelie, Gentoo, and Chinstrap.
+  * `island`is a categorical variable describing the island the penguin was identified on, which includes Torgersen, Biscoe, and Dream.
+  * `bill_length_mm` is a continuous variable describing the length of the bill of penguin in millimeters.
+  * `bill_depth_mm` is a continuous variable describing the depth of the bill of penguin in millimeters.
+  * `flipper_length_mm` is an integer describing the length of the flipper of penguin in millimeters.
+  * `body_mass_g`is an integer describing the mass of penguin in grams 
+  * `sex` is a categorical variable describing the sex of the penguin, including male and female.
+  * `year`is an integer describing the year of data recording.
+
 
